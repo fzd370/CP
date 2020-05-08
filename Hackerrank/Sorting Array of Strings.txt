@@ -1,6 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+/* Explaination : - 
+1. lexicographic_sort() function takes two pointers which point to characters and compares them. This function sorts the characters
+   in increasing order i.e. - abb, basc, cdes. So, if the value returned by strcmp() is greater than 1 that means greater charcater is present before smaller character
+   and we need to do swapping. That's why we return 1 to string_sort. And if value returned by strcmp() is 0 or -ve then there is no need of swapping. So, we return 0;
+
+2. lexicographic_sort_reverse() function does the opposite of above function. It sorts the characters in decreasing order. 
+
+3. distinct_chars() is the function used to find number of characters in the string and there frequency.
+
+4. sort_by_number_of_distinct_characters() function sorts strings on the basis of distinct characters. We take the difference of distinct characters in both the strings 
+   If the diff. is greater than 0, that means stirng with more distinct characters is present before the string which has less number of distinct characters. So, we need to
+   do swap.
+
+5. sort_by_length() function sorts strings on the basis of length.
+
+6. We perform string_sort() in O(n^2). We can do better than this by using quick sort or merge sort.
+*/
+
  int lexicographic_sort(const char* a, const char* b) {
      if(strcmp(a,b)>0)
      return 1;
