@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+char *encode(char *src);
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+	    char str[10000];
+	    cin>>str;
+	    cout<<encode(str)<<endl;
+	}
+	return 0;
+}
+
+char *encode(char *src)
+{     
+    char *dest;
+    int i,k=0;
+    char count='1';
+    int len=strlen(src);
+    dest=(char *)malloc(sizeof(char)*2*len+1);
+    for(i=0;src[i]!='\0';i++){
+        dest[k]=src[i];
+        if(src[i]==src[i+1])
+        count++;
+        else
+        {
+            dest[++k]=count;
+            count='1';
+            k++;
+        }
+    }
+    dest[k]='\0';
+    dest = (char *)realloc(dest, strlen(dest) + 1);
+    return dest;
+  
+}     
+
