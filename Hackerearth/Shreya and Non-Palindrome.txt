@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	string s,str;
+	cin>>s;
+	str=s;
+	int count=0;
+	reverse(str.begin(),str.end());
+	for(int i=0;i<s.length()-1;i++)
+	if(s[i]==s[i+1])
+	count++;
+	if(s.size()==1)
+	cout<<0;
+	else if(s==str&&count==s.size()-1)
+	cout<<0;
+	else if(s==str&&count!=s.size()-1)
+	cout<<s.size()-1;
+	else cout<<s.size();
+	return 0;
+
+}
