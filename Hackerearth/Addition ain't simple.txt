@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	while(t-->0){
+		string s;
+		cin>>s;
+		int i=0,j=0;
+		string str;
+		str=s;
+		reverse(str.begin(), str.end());
+		while(i<s.size()){
+		int x=s[i]-96;
+		//cout<<x;
+		int y=str[i]-96;
+		int z=x+y;
+		if(z<=26){
+		char c=96+z;
+		cout<<c;
+		}
+		else{
+			char c=96+(z-26);
+			cout<<c;
+		}
+		i++;
+
+		}
+		cout<<endl;
+	}
+
+	return 0;
+}
