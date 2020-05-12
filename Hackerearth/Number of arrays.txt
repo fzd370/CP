@@ -1,0 +1,28 @@
+#include<iostream>
+#include <algorithm> 
+using namespace std;
+/* Explaination :-
+In question it was given that array can be divided into k non empty sets. But it isn't specified how. So, there are numerous ways possible to divide the array but if we apply a little logical thinking then problem can be brought down to simple terms. It is given that P is an array which contains max elements from all the k sets of array. So, if k!=1 that means the min element can always be present in the array P. How? 
+Eg - 1 2 3 4 5, k=2 so we divide array like - [1][2 3 4 5]...that means 1 will always be present. Likewise in all cases. That's why when k!=1 then we compare q with the min element of the array. But if k==1 then the whole array becomes one segment and P will contain max element of the array and we need to compare q with the max element of the array.
+*/
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int n,k,q;
+		cin>>n>>k>>q;
+		int i,a[n],ans=0;
+		for(i=0;i<n;i++)
+		cin>>a[i];
+		if(k==1)
+		ans=*(std::max_element(a,a+n));
+		else
+		ans=*(std::min_element(a,a+n));
+		if(ans>q)
+		cout<<"NO";
+		else
+		cout<<ans;
+		cout<<endl;
+	}
+	return 0;
+}
