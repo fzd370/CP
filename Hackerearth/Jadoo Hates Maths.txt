@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int n,k,flag=0,out=1;
+	cin>>n;
+	while(true){
+		k=++n;
+		if(k%3!=0){
+			flag=1,out=1;
+			while(k>0){
+				if((k%10)==3){
+					out=0;
+					break;
+				}
+				k/=10;
+			}			
+		}
+
+		if(out&&flag){
+		cout<<n<<endl;
+		break;
+		}
+	}
+
+	return 0;
+}
