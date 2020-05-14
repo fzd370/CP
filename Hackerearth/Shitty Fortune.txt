@@ -1,0 +1,49 @@
+#include <bits/stdc++.h> 
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		string s;
+		int k;
+		cin>>s>>k;
+		if(k==1){
+			string rev=s;
+			reverse(rev.begin(),rev.end());
+			if(rev!=s){
+				cout<<"NO"<<endl;
+			}
+			else
+			cout<<"YES"<<endl;
+		}
+		else{
+		if(s.length()%k==0){
+		int n=s.length()/k;
+		if(n==1)
+		cout<<"YES"<<endl;
+		else{
+		int j=0,i=n,flag=1;
+		while(j<s.length()){
+			string s1=s.substr(j,i);
+			string rev=s1;
+			reverse(rev.begin(),rev.end());
+			if(rev!=s1){
+				flag=0;
+				break;
+			}
+			j+=i;
+	
+		}
+		if(flag==1)
+		cout<<"YES"<<endl;
+		else
+		cout<<"NO"<<endl;
+		}
+		}
+		else
+		cout<<"NO"<<endl;
+		}
+
+	}
+	return 0;
+}
