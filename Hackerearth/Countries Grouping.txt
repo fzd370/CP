@@ -1,0 +1,46 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int n;
+		cin>>n;
+		int a[n],i,dist=0,max,c=1;
+		for(i=0;i<n;i++)
+		cin>>a[i];
+		max=*(std::max_element(a,a+n));
+		sort(a,a+n);
+		if(max>n){
+			cout<<"Invalid Data"<<endl;
+			continue;
+		}
+		else{
+			for(i=0;i<n;i++){
+				if(a[i]==1)
+				dist++;
+				else{
+					int k=a[i],count=1;
+					while(count<k){
+					if(a[i]!=a[i+1]){
+						c=0;
+						break;
+					}
+					count++;
+					i++;
+					}
+					dist++;
+				}
+				if(c==0)
+				break;
+			}
+		}
+		if(c==0)
+			cout<<"Invalid Data"<<endl;
+		else 
+		    cout<<dist<<endl;
+	}
+
+	return 0;
+}
