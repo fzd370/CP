@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int p,s,t,h,x;
+	cin>>p>>s>>t>>h>>x;
+	if((s-x)>t)
+	cout<<x*p<<endl;
+	else{
+		int total=(s-t)*p+(x-(s-t))*h;
+		cout<<total<<endl;
+	}
+	
+
+	return 0;
+}
