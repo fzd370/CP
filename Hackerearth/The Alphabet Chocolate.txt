@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		string str;
+		cin>>str;
+		long long count=0;
+             for (int k = 0; k < str.length(); k++) {
+                     if(str[k]=='a'||str[k]=='A'||str[k]=='e'||str[k]=='E'||str[k]=='i'||str[k]=='I'||str[k]=='o'||str[k] =='O'||str[k]=='u'||str[k]=='U'){
+                         count=count+((str.length()-k)*(k+1));;
+                     }
+                     else continue;
+                                 
+                }
+
+				cout<<count<<endl;
+	}
+
+	return 0;
+}
