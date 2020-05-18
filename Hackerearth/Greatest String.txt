@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int t;
+cin>>t;
+int n;
+string str;
+while(t--)
+{
+cin>>str;
+cin>>n;
+int i=0;
+while(n&&i<str.length())
+{
+if(str[i]=='a'||str[i]=='i'||str[i]=='o'||str[i]=='u'||str[i]=='e')
+{
+str[i]++;
+n--;
+}
+i++;
+}
+cout<<str<<endl;
+
+}
+return 0;
+}
